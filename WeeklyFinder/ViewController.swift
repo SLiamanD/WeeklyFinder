@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         let date = calendar.date(from: dateComponents)
         let weekday = dateFormatter.string(from: date!)
         
-        resultLabel.text = weekday`
+        resultLabel.text = weekday
         
     }
     
