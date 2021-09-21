@@ -23,6 +23,15 @@ class ViewController: UIViewController {
         dateComponents.day = Int(dateTF.text!)
         dateComponents.month = Int(monthTF.text!)
         dateComponents.year = Int(yearTF.text!)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        
+        let date = calendar.date(from: dateComponents)
+        let weekday = dateFormatter.string(from: date!)
+        
+        resultLabel.text = weekday`
+        
     }
     
 }
