@@ -19,10 +19,5 @@ class ViewController: UIViewController {
     @IBAction func findDay(_ sender: UIButton) {
     }
     
-    
-    
-    var a = 0
-    
-
 }
 
