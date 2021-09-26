@@ -13,9 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var dateTF: UITextField!
     @IBOutlet weak var monthTF: UITextField!
     @IBOutlet weak var yearTF: UITextField!
-    
     @IBOutlet weak var resultLabel: UILabel!
-    
     @IBAction func findDay(_ sender: UIButton) {
         
         let calendar = Calendar.current
@@ -33,6 +31,12 @@ class ViewController: UIViewController {
         resultLabel.text = weekday
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
+    
     
 }
 
