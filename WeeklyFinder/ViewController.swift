@@ -18,36 +18,29 @@ class ViewController: UIViewController {
     
     @IBAction func findDay(_ sender: UIButton) {
         
-        if let day = dateTF.text, let month = monthTF.text, let year = yearTF.text {
-            
-            
-            let calendar = Calendar.current
-            var dateComponents = DateComponents()
-            dateComponents.day = Int(dateTF.text!)
-            dateComponents.month = Int(monthTF.text!)
-            dateComponents.year = Int(yearTF.text!)
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "EEEE"
-            
-            let date = calendar.date(from: dateComponents)
-            let weekday = dateFormatter.string(from: date!)
-            
-            resultLabel.text = weekday
-            
-        }
-        func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-            self.view.endEditing(true)
-        }
-            
+        guard let day = dateTF.text, let month = monthTF.text, let year = yearTF.text else {
+            return
         }
         
         
-
-    
-    
-    
-    
+        let calendar = Calendar.current
+        var dateComponents = DateComponents()
+        dateComponents.day = Int(dateTF.text!)
+        dateComponents.month = Int(monthTF.text!)
+        dateComponents.year = Int(yearTF.text!)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        
+        let date = calendar.date(from: dateComponents)
+        let weekday = dateFormatter.string(from: date!)
+        
+        resultLabel.text = weekday
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 }
 
 
